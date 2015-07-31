@@ -24,4 +24,4 @@ The Wiki in this Repo should however contain all of the information you need abo
 
 ---
 
-![Screenshot](Screenshots/Flatso-Theme.jpeg)
+![Screenshot](screenshots/Flatso-Theme.jpeg)
