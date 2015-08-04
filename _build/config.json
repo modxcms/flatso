@@ -1,0 +1,758 @@
+{
+  "name": "Flatso",
+  "lowCaseName": "flatso",
+  "description": "Home of Flatso: the simple blog and theme for MODX, done right.",
+  "author": "Wayne Roddy",
+  "version": "1.0.0",
+  "package": {
+    "elements": {
+      "templates": [
+        {
+          "name": "RSS"
+        }
+      ],
+      "chunks": [
+        {
+          "name": "nav_tab_support"
+        },
+        {
+          "name": "rss-item"
+        },
+        {
+          "name": "styleguide"
+        },
+        {
+          "name": "FlatsoCss"
+        },
+        {
+          "name": "mxt.global_assets_flatso"
+        },
+        {
+          "name": "mxt.global_header_flatso"
+        },
+        {
+          "name": "mxt.global_meta_flatso"
+        },
+        {
+          "name": "tpl.feature_featured_posts_sidebar_flatso",
+          "category": "Features"
+        },
+        {
+          "name": "tpl.feature_listing_flatso",
+          "category": "Features"
+        },
+        {
+          "name": "mxt.listing_aside_flatso",
+          "category": "Listing"
+        },
+        {
+          "name": "mxt.listing_content_flatso",
+          "category": "Listing"
+        },
+        {
+          "name": "mxt.listing_end_flatso",
+          "category": "Listing"
+        },
+        {
+          "name": "mxt.listing_header_flatso",
+          "category": "Listing"
+        },
+        {
+          "name": "mxt.listing_start_flatso",
+          "category": "Listing"
+        },
+        {
+          "name": "mobile-nav_flatso",
+          "category": "Mobile"
+        },
+        {
+          "name": "mxt.page_content_flatso",
+          "category": "Page"
+        },
+        {
+          "name": "mxt.page_end_flatso",
+          "category": "Page"
+        },
+        {
+          "name": "mxt.page_header_flatso",
+          "category": "Page"
+        },
+        {
+          "name": "mxt.page_start_flatso",
+          "category": "Page"
+        },
+        {
+          "name": "tpl.arc_list_flatso",
+          "category": "TPLs"
+        },
+        {
+          "name": "tpl.listing_tag_flatso",
+          "category": "TPLs"
+        },
+        {
+          "name": "tpl.nav-item_flatso",
+          "category": "TPLs"
+        },
+        {
+          "name": "tpl.tag_list_flatso",
+          "category": "TPLs"
+        }
+      ],
+      "categories": [
+        {
+          "name": "Features"
+        },
+        {
+          "name": "Listing"
+        },
+        {
+          "name": "Mobile"
+        },
+        {
+          "name": "Page"
+        },
+        {
+          "name": "TPLs"
+        }
+      ]
+    },
+    "resources": [
+      {
+        "pagetitle": "Home",
+        "alias": "index",
+        "template": "MX Template",
+        "isfolder": 1,
+        "published": 1,
+        "class_key": "CollectionContainer",
+        "setAsHome": 1,
+        "tvs": [
+          {
+            "name": "content_tpl",
+            "value": "listing"
+          },
+          {
+            "name": "body_tpl",
+            "value": "page"
+          },
+          {
+            "name": "page_icon",
+            "value": "fa-home"
+          },
+          {
+            "name": "page_img",
+            "value": "assets/components/flatso/images/home-page-image.jpg"
+          },
+          {
+            "name": "fpost_ids",
+            "value": "9,10"
+          },
+          {
+            "name": "hero_banner",
+            "value": "yes"
+          },
+          {
+            "name": "carousel_ids",
+            "value": ""
+          },
+          {
+            "name": "slider_ids",
+            "value": ""
+          },
+          {
+            "name": "listing_ids",
+            "value": ""
+          },
+          {
+            "name": "listbyparent",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "pagetitle": "Categories",
+        "longtitle": "All Categories",
+        "alias": "tags",
+        "template": "MX Template",
+        "published": 1,
+        "isfolder": 1,
+        "tvs": [
+          {
+            "name": "content_tpl",
+            "value": "listing"
+          },
+          {
+            "name": "body_tpl",
+            "value": "page"
+          },
+          {
+            "name": "page_icon",
+            "value": ""
+          },
+          {
+            "name": "page_img",
+            "value": ""
+          },
+          {
+            "name": "fpost_ids",
+            "value": ""
+          },
+          {
+            "name": "hero_banner",
+            "value": ""
+          },
+          {
+            "name": "carousel_ids",
+            "value": ""
+          },
+          {
+            "name": "slider_ids",
+            "value": ""
+          },
+          {
+            "name": "listing_ids",
+            "value": ""
+          },
+          {
+            "name": "listbyparent",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "pagetitle": "RSS",
+        "alias": "rss",
+        "introtext": "RSS FEED",
+        "template": "RSS",
+        "published": 1,
+        "searchable": 0,
+        "richtext": 0,
+        "cacheable": 0,
+        "hidemenu": 1
+      },
+      {
+        "pagetitle": "Style Guide",
+        "longtitle": "Style Guide",
+        "alias": "style-guide",
+        "template": "MX Template",
+        "published": 1,
+        "content": "[[$styleguide]]",
+        "tvs": [
+          {
+            "name": "content_tpl",
+            "value": "page"
+          },
+          {
+            "name": "body_tpl",
+            "value": "page"
+          },
+          {
+            "name": "page_icon",
+            "value": ""
+          },
+          {
+            "name": "page_img",
+            "value": "assets/components/flatso/images/revine-yoga.jpg"
+          },
+          {
+            "name": "fpost_ids",
+            "value": ""
+          },
+          {
+            "name": "hero_banner",
+            "value": "yes"
+          },
+          {
+            "name": "carousel_ids",
+            "value": ""
+          },
+          {
+            "name": "slider_ids",
+            "value": ""
+          },
+          {
+            "name": "listing_ids",
+            "value": ""
+          },
+          {
+            "name": "listbyparent",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "pagetitle": "Archives",
+        "longtitle": "[[+arc_month_name]] [[+arc_year]] Archives",
+        "introtext": "A lot can happen in a month",
+        "alias": "archives",
+        "template": "MX Template",
+        "published": 1,
+        "isfolder": 1,
+        "tvs": [
+          {
+            "name": "content_tpl",
+            "value": "listing"
+          },
+          {
+            "name": "body_tpl",
+            "value": "page"
+          },
+          {
+            "name": "page_icon",
+            "value": ""
+          },
+          {
+            "name": "page_img",
+            "value": ""
+          },
+          {
+            "name": "fpost_ids",
+            "value": ""
+          },
+          {
+            "name": "hero_banner",
+            "value": ""
+          },
+          {
+            "name": "carousel_ids",
+            "value": ""
+          },
+          {
+            "name": "slider_ids",
+            "value": ""
+          },
+          {
+            "name": "listing_ids",
+            "value": ""
+          },
+          {
+            "name": "listbyparent",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "pagetitle": "Golden Gate Bridge",
+        "longtitle": "Golden Gate Bridge",
+        "description": "Golden Gate Bridge spans the San Francisco Bay.",
+        "introtext": "Golden Gate Bridge spans the San Francisco Bay.",
+        "published": 1,
+        "alias": "golden-gate-bridge",
+        "template": "MX Template",
+        "file": "sample_resource.html",
+        "parent": "Home",
+        "tvs": [
+          {
+            "name": "content_tpl",
+            "value": "page"
+          },
+          {
+            "name": "body_tpl",
+            "value": "page"
+          },
+          {
+            "name": "page_icon",
+            "value": ""
+          },
+          {
+            "name": "page_img",
+            "value": "assets/components/flatso/images/golden-gate-bridge.jpg"
+          },
+          {
+            "name": "fpost_ids",
+            "value": ""
+          },
+          {
+            "name": "hero_banner",
+            "value": ""
+          },
+          {
+            "name": "carousel_ids",
+            "value": ""
+          },
+          {
+            "name": "slider_ids",
+            "value": ""
+          },
+          {
+            "name": "listing_ids",
+            "value": ""
+          },
+          {
+            "name": "listbyparent",
+            "value": ""
+          }
+        ],
+        "others": [
+          {
+            "name": "tagger-category",
+            "value": "Landmarks"
+          }
+        ]
+      },
+      {
+        "pagetitle": "Redwood Forest",
+        "longtitle": "Redwood Forest",
+        "description": "Find everything you need to plan your Northern California vacation in the redwoods.",
+        "introtext": "Find everything you need to plan your Northern California vacation in the redwoods.",
+        "published": 1,
+        "alias": "redwood-forest",
+        "template": "MX Template",
+        "file": "sample_resource.html",
+        "parent": "Home",
+        "tvs": [
+          {
+            "name": "content_tpl",
+            "value": "page"
+          },
+          {
+            "name": "body_tpl",
+            "value": "page"
+          },
+          {
+            "name": "page_icon",
+            "value": ""
+          },
+          {
+            "name": "page_img",
+            "value": "assets/components/flatso/images/forest.jpg"
+          },
+          {
+            "name": "fpost_ids",
+            "value": ""
+          },
+          {
+            "name": "hero_banner",
+            "value": ""
+          },
+          {
+            "name": "carousel_ids",
+            "value": ""
+          },
+          {
+            "name": "slider_ids",
+            "value": ""
+          },
+          {
+            "name": "listing_ids",
+            "value": ""
+          },
+          {
+            "name": "listbyparent",
+            "value": ""
+          }
+        ],
+        "others": [
+          {
+            "name": "tagger-category",
+            "value": "Landmarks"
+          }
+        ]
+      },
+      {
+        "pagetitle": "Golden City",
+        "longtitle": "Golden City",
+        "introtext": "Look at this beautiful color. ",
+        "published": 1,
+        "alias": "golden-city",
+        "template": "MX Template",
+        "file": "sample_resource.html",
+        "parent": "Home",
+        "tvs": [
+          {
+            "name": "content_tpl",
+            "value": "page"
+          },
+          {
+            "name": "body_tpl",
+            "value": "page"
+          },
+          {
+            "name": "page_icon",
+            "value": ""
+          },
+          {
+            "name": "page_img",
+            "value": "assets/components/flatso/images/golden-city.jpg"
+          },
+          {
+            "name": "fpost_ids",
+            "value": ""
+          },
+          {
+            "name": "hero_banner",
+            "value": "yes"
+          },
+          {
+            "name": "carousel_ids",
+            "value": ""
+          },
+          {
+            "name": "slider_ids",
+            "value": ""
+          },
+          {
+            "name": "listing_ids",
+            "value": ""
+          },
+          {
+            "name": "listbyparent",
+            "value": ""
+          }
+        ],
+        "others": [
+          {
+            "name": "tagger-category",
+            "value": "Landscapes"
+          }
+        ]
+      },
+      {
+        "pagetitle": "Downtown Hustle",
+        "longtitle": "Downtown Hustle",
+        "published": 1,
+        "alias": "downtown-hustle",
+        "template": "MX Template",
+        "file": "sample_resource.html",
+        "parent": "Home",
+        "tvs": [
+          {
+            "name": "content_tpl",
+            "value": "page"
+          },
+          {
+            "name": "body_tpl",
+            "value": "page"
+          },
+          {
+            "name": "page_icon",
+            "value": ""
+          },
+          {
+            "name": "page_img",
+            "value": "assets/components/flatso/images/downtown.jpg"
+          },
+          {
+            "name": "fpost_ids",
+            "value": ""
+          },
+          {
+            "name": "hero_banner",
+            "value": "yes"
+          },
+          {
+            "name": "carousel_ids",
+            "value": ""
+          },
+          {
+            "name": "slider_ids",
+            "value": ""
+          },
+          {
+            "name": "listing_ids",
+            "value": ""
+          },
+          {
+            "name": "listbyparent",
+            "value": ""
+          }
+        ],
+        "others": [
+          {
+            "name": "tagger-category",
+            "value": "Landscapes"
+          }
+        ]
+      },
+      {
+        "pagetitle": "Coastal Beach House",
+        "longtitle": "Coastal Beach House",
+        "description": "The shores of Orange Park are a mellow sight.",
+        "introtext": "The shores of Orange Park are a mellow sight.",
+        "published": 1,
+        "alias": "coastal-beach-house",
+        "template": "MX Template",
+        "file": "sample_resource.html",
+        "parent": "Home",
+        "tvs": [
+          {
+            "name": "content_tpl",
+            "value": "page"
+          },
+          {
+            "name": "body_tpl",
+            "value": "page"
+          },
+          {
+            "name": "page_icon",
+            "value": ""
+          },
+          {
+            "name": "page_img",
+            "value": "assets/components/flatso/images/beach-house.jpg"
+          },
+          {
+            "name": "fpost_ids",
+            "value": ""
+          },
+          {
+            "name": "hero_banner",
+            "value": "yes"
+          },
+          {
+            "name": "carousel_ids",
+            "value": ""
+          },
+          {
+            "name": "slider_ids",
+            "value": ""
+          },
+          {
+            "name": "listing_ids",
+            "value": ""
+          },
+          {
+            "name": "listbyparent",
+            "value": ""
+          }
+        ],
+        "others": [
+          {
+            "name": "tagger-category",
+            "value": "Landmarks"
+          }
+        ]
+      },
+      {
+        "pagetitle": "Surf City",
+        "longtitle": "Surf City",
+        "description": "Hang Ten Brah!",
+        "introtext": "Hang Ten Brah!",
+        "published": 1,
+        "alias": "surf-city",
+        "template": "MX Template",
+        "file": "sample_resource.html",
+        "parent": "Home",
+        "tvs": [
+          {
+            "name": "content_tpl",
+            "value": "page"
+          },
+          {
+            "name": "body_tpl",
+            "value": "page"
+          },
+          {
+            "name": "page_icon",
+            "value": ""
+          },
+          {
+            "name": "page_img",
+            "value": "assets/components/flatso/images/surf-city.jpg"
+          },
+          {
+            "name": "fpost_ids",
+            "value": ""
+          },
+          {
+            "name": "hero_banner",
+            "value": "yes"
+          },
+          {
+            "name": "carousel_ids",
+            "value": ""
+          },
+          {
+            "name": "slider_ids",
+            "value": ""
+          },
+          {
+            "name": "listing_ids",
+            "value": ""
+          },
+          {
+            "name": "listbyparent",
+            "value": ""
+          }
+        ],
+        "others": [
+          {
+            "name": "tagger-category",
+            "value": "Landscapes"
+          }
+        ]
+      }
+    ],
+    "systemSettings": [
+      {
+        "key": "archive_id",
+        "value": ""
+      },
+      {
+        "key": "blog_id",
+        "value": ""
+      },
+      {
+        "key": "category_id",
+        "value": ""
+      },
+      {
+        "key": "site_logo",
+        "value": ""
+      }
+    ]
+  },
+  "dependencies": [
+    {
+      "name": "mxt",
+      "version": ">=1.0.0"
+    },
+    {
+      "name": "collections",
+      "version": ">=3.2.0"
+    },
+    {
+      "name": "tagger",
+      "version": ">=1.7.0"
+    },
+    {
+      "name": "getresources",
+      "version": ">=1.6.0"
+    },
+    {
+      "name": "archivist",
+      "version": ">=1.2.0"
+    },
+    {
+      "name": "getpage",
+      "version": ">=1.2.0"
+    },
+    {
+      "name": "pthumb",
+      "version": ">=2.3.0"
+    },
+    {
+      "name": "resizer",
+      "version": ">=1.0.0"
+    },
+    {
+      "name": "switch",
+      "version": ">=1.1.0"
+    },
+    {
+      "name": "clientconfig",
+      "version": ">=1.3.0"
+    }
+  ],
+  "build": {
+    "readme": "docs/index.md",
+    "license": "docs/license.md",
+    "changelog": "docs/changelog.md",
+    "setupOptions": {
+      "source": "setup.options.php"
+    },
+    "resolver": {
+      "before": ["sample_content.php"],
+      "after": ["sample_settings.php", "config.php"]
+    }
+  }
+}

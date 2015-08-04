@@ -1,0 +1,3 @@
+<!-- Mobile Navigation --><div class="b-nav" aria-hidden="true"><ul role="menu">[[getResources? &parents=`0` &depth=`0` &limit=`0` &sortby=`{"menuindex":"ASC"}` &tpl=`tpl.nav-item_flatso`]]</ul></div>
+<!-- Mobile-Icon -->
+<div class="b-container" aria-hidden="true"><div class="b-menu"><div class="b-bun b-bun--top"></div><div class="b-bun b-bun--mid"></div><div class="b-bun b-bun--bottom"></div></div></div>

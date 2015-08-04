@@ -1,0 +1,1 @@
+[[$mxt.global_header_flatso]]
