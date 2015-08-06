@@ -27,6 +27,10 @@ The Wiki in this Repo should however contain all of the information you need abo
 3. Flatso Extra (Package) - For everything else!
 ![Flatso Config](screenshots/flatso-config.jpeg)
 
+4. After install set Friendly URLs to `Yes`
+
+5. Clear cache
+
 ---
 
 ![Screenshot](screenshots/Flatso-Theme.jpeg)
