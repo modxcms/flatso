@@ -232,7 +232,8 @@
         "searchable": 0,
         "richtext": 0,
         "cacheable": 0,
-        "hidemenu": 1
+        "hidemenu": 1,
+        "content_type": "RSS"
       },
       {
         "pagetitle": "Style Guide",
