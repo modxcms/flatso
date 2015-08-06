@@ -1,6 +1,8 @@
 # flatso
 Home of Flatso: the simple personal blog theme for MODX, done without any "Parent Extras" like "Articles", but instead using MODX 2.4 dependencies to install Extras.
 
+YouTube Demo: [https://youtu.be/cARDoKmL9mg](https://youtu.be/cARDoKmL9mg)
+
 DEMO: [Live Site](http://flatso.clients.modxcloud.com/)
 Package: [Download v1.0.0-pl](flatso-1.0.0-pl.transport.zip)
 
