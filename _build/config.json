@@ -11,6 +11,11 @@
           "name": "RSS"
         }
       ],
+      "snippets": [
+        {
+          "name": "cateHeading"
+        }
+      ],
       "chunks": [
         {
           "name": "nav_tab_support"
