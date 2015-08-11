@@ -22,7 +22,6 @@ if (!function_exists('getResourceMap')) {
 
 switch ($options[xPDOTransport::PACKAGE_ACTION]) {
     case xPDOTransport::ACTION_INSTALL:
-    case xPDOTransport::ACTION_UPGRADE:
         $clientConfigCorePath = $modx->getOption('clientconfig.core_path', null, $modx->getOption('core_path', null, MODX_CORE_PATH) . 'components/clientconfig/');
         /** @var ClientConfig $clientConfig */
         $clientConfig = $modx->getService(
@@ -37,9 +36,11 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         $groups = array();
         if (isset($options['install_resources']) && empty($options['install_resources'])) {
             $rssResource = '';
+            $archivistIDsValue = '';
         } else {
             $resourceMap = getResourceMap();
             $rssResource = "[[~" . $resourceMap['RSS'] . "]]";
+            $archivistIDsValue = $resourceMap['Archives'];
         }
         
         $group = $modx->getObject('cgGroup', array('label' => 'Global'));
@@ -473,18 +474,30 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
             $themeSetting->save();
         }
     
-        $friendlyURLs = $modx->getObject('modSystemSetting', array('key' => 'friendly_urls'));
-        if ($friendlyURLs) {
-            $friendlyURLs->set('value', 1);
-            $friendlyURLs->save();
+        $archivistIDs = $modx->getObject('modSystemSetting', array('key' => 'archivist.archive_ids'));
+        if (!$archivistIDs) {
+            $archivistIDs = $modx->newObject('modSystemSetting');
+            $archivistIDs->set('key', 'archivist.archive_ids');
+            $archivistIDs->set('namespace', 'archivist');
+            $archivistIDs->set('area', 'furls');
         }
         
-        $contentType = $modx->getObject('modContentType', array('name' => 'HTML'));
-        if ($contentType) {
-            $contentType->set('file_extensions', '/');
-            $contentType->save();
+        if (!empty($archivistIDsValue)) {
+            $archivistIDs->set('value', $archivistIDsValue . ':arc_');
+        }
+        
+        $archivistIDs->save();
+
+        if (!(isset($options['install_resources'])) || !(empty($options['install_resources']))) {
+            $contentType = $modx->getObject('modContentType', array('name' => 'HTML'));
+            if ($contentType) {
+                $contentType->set('file_extensions', '/');
+                $contentType->save();
+            }
         }
 
+        break;
+    case xPDOTransport::ACTION_UPGRADE:
         break;
     case xPDOTransport::ACTION_UNINSTALL:
         break;

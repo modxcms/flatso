@@ -353,6 +353,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
     array (
     ),
     'template' => 'RSS',
+    'content_type' => 'RSS',
     'published' => 1,
     'hidemenu' => 1,
     'cacheable' => 0,

@@ -5,7 +5,6 @@ $modx =& $object->xpdo;
 
 switch ($options[xPDOTransport::PACKAGE_ACTION]) {
     case xPDOTransport::ACTION_INSTALL:
-    case xPDOTransport::ACTION_UPGRADE:
         if (isset($options['install_resources']) && empty($options['install_resources'])) return true;
 
         $taggerCorePath = $modx->getOption('tagger.core_path', null, $modx->getOption('core_path', null, MODX_CORE_PATH) . 'components/tagger/');
@@ -55,6 +54,8 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
             $tagObject->save();
         }
 
+        break;
+    case xPDOTransport::ACTION_UPGRADE:
         break;
     case xPDOTransport::ACTION_UNINSTALL:
         break;
