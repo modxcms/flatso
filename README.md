@@ -12,7 +12,7 @@ This package has 1 goal:
 
 ##Framework
 
-Build on the [MODX Themes](https://github.com/modxcms/themes/wiki) Framework
+Built on the [MODX Themes](https://github.com/modxcms/themes/wiki) Framework
 
 The Wiki in this Repo should however contain all of the information you need about the **Theme Markup**.
 
