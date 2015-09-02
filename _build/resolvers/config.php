@@ -42,7 +42,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
             $rssResource = "[[~" . $resourceMap['RSS'] . "]]";
             $archivistIDsValue = $resourceMap['Archives'];
         }
-        
+
         $group = $modx->getObject('cgGroup', array('label' => 'Global'));
         if (!$group) {
             $group = $modx->newObject('cgGroup');
@@ -112,7 +112,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
             $group->save();
         }
         $groups['js'] = $group->id;
-        
+
         $settings = array(
             array(
                 'key' => 'cc_font_script',
@@ -182,6 +182,18 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
                 'is_required' => '0',
                 'sortorder' => '1',
                 'value' => "444444",
+                'default' => '',
+                'group' => $groups['global'],
+                'options' => ''
+            ),
+            array(
+                'key' => 'cc_third_color',
+                'label' => 'Third Color',
+                'xtype' => 'colorpickerfield',
+                'description' => '',
+                'is_required' => '0',
+                'sortorder' => '1',
+                'value' => "aaaaaa",
                 'default' => '',
                 'group' => $groups['global'],
                 'options' => ''
@@ -450,9 +462,9 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
                 'group' => $groups['socialmedia'],
                 'options' => ''
             ),
-            
+
         );
-        
+
         foreach ($settings as $setting) {
             $settingObject = $modx->newObject('cgSetting');
             $settingObject->set('key', $setting['key']);
@@ -473,7 +485,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
             $themeSetting->set('value','flatso');
             $themeSetting->save();
         }
-    
+
         $archivistIDs = $modx->getObject('modSystemSetting', array('key' => 'archivist.archive_ids'));
         if (!$archivistIDs) {
             $archivistIDs = $modx->newObject('modSystemSetting');
@@ -481,11 +493,11 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
             $archivistIDs->set('namespace', 'archivist');
             $archivistIDs->set('area', 'furls');
         }
-        
+
         if (!empty($archivistIDsValue)) {
             $archivistIDs->set('value', $archivistIDsValue . ':arc_');
         }
-        
+
         $archivistIDs->save();
 
         if (!(isset($options['install_resources'])) || !(empty($options['install_resources']))) {
