@@ -3,7 +3,7 @@
 <head>
     <!-- You have loaded Theme "[[++theme]]" -->
     <!-- You have Selected Content Template [[*content_tpl]] -->
-    <title>[[++site_name]]</title>
+    <title>[[*longtitle:default=`[[*pagetitle]]`]] | [[++cc_site_title]]</title>
     <base href="[[!++site_url]]" />
     <link rel="alternate" type="application/rss+xml" title="[[++site_name]]" href="[[!++site_url]][[~12]]" />
     [[$mxt.global_meta_flatso]]

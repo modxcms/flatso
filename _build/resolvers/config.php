@@ -319,12 +319,24 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
                 'options' => ''
             ),
             array(
+                'key' => 'cc_site_title',
+                'label' => 'Site Title',
+                'xtype' => 'textfield',
+                'description' => '',
+                'is_required' => '0',
+                'sortorder' => '0',
+                'value' => "Flatso",
+                'default' => '',
+                'group' => $groups['content'],
+                'options' => ''
+            ),
+            array(
                 'key' => 'cc_sidebar_title',
                 'label' => 'Sidebar Widget Title',
                 'xtype' => 'textfield',
                 'description' => '',
                 'is_required' => '0',
-                'sortorder' => '0',
+                'sortorder' => '1',
                 'value' => "ABOUT ME",
                 'default' => '',
                 'group' => $groups['content'],
