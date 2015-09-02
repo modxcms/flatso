@@ -2,7 +2,11 @@
 .clearfix:before,.clearfix:after{content: " ";display: table;}.clearfix:after{clear: both;}
 .container{max-width: 60rem;margin-left:auto;margin-right:auto;}
 form input{border:none;border-radius:6px;margin-bottom:10px;padding:0 8px; text-indent:5px;}
-form button{border:none;border-radius:6px;margin-bottom:10px;padding:0 8px;}
+form textarea{border:none;border-radius:6px;margin-bottom:10px;padding:.5rem; display:block;font-size:.9rem;min-width: 20rem;}
+form button{border:none;border-radius:6px;margin-bottom:10px;padding:.5rem 1rem; cursor: pointer;}
+form label{min-width: 8rem; display: inline-block;}
+form .input-wrapper{display:block; margin-bottom:1rem;}
+form select{border:none;border-radius:6px;padding: 0 .25rem;}
 
 /*header*/
 nav{text-align:center;}
@@ -20,6 +24,14 @@ main.hero--on aside{margin-top:4rem !important;}
 
 /*main*/
 main{margin-top:2rem;margin-bottom:2rem;}
+
+/*typography*/
+h1{font-size:1.5rem;}
+h2{font-size:1.3rem;}
+h3{font-size:1.2rem;}
+h4{font-size:1.1rem;}
+h5,h6{font-size:1rem;}
+small{font-size:.8rem;}
 
 /*listing*/
 body.listing main > section{background-color:#FFF;width:60%;}
@@ -49,6 +61,7 @@ body.page main > section > article > h1{font-size:1.5rem;padding-bottom:1rem;}
 body.page .page--meta{padding:.5rem 0;font-size:.9rem;}
 body.page main > section > article p{padding-bottom:1rem;}
 body.page main > section > article ul,body.page main > section > article ol{margin:1rem 2rem;}
+body.page main > section > article ul ul,body.page main > section > article ol ol{margin:0 2rem;}
 body.page main > section > article ul{list-style:disc;}body.page main > section > article ol{list-style:decimal;}
 body.page main a:hover{text-decoration:underline;}
 
@@ -56,9 +69,24 @@ body.page main a:hover{text-decoration:underline;}
 aside .feat--post{margin-bottom:1rem;border-bottom:1px solid #f2f2f2;}
 aside .feat--post--img{float:left; margin-right:.5rem;}
 
+/*tables*/
+table{width: 100%;}
+table th{text-align:left; padding: .5rem 0;}
+table td{padding: .5rem 0;}
+
 @media (max-width: 960px) {
     nav{display:none;}
     main{margin-top:7rem;}
     body.listing main > section, body.listing main > aside{ float:none; width:80%; margin-left:auto; margin-right:auto;}
-} 
 
+    /* Force tables to not be like tables anymore */
+    table, table thead, table tbody, table th, table td, table tr{display: block;}
+    /* Hide table headers (but not display: none;, for accessibility) */
+    table thead tr{position: absolute;top: -9999px;left: -9999px;}
+    /* Behave  like a "row" */
+    table td {border: none;position: relative;padding-left: 33% !important;}
+    /* Now like a table header */
+    table td:before {position: absolute;top: 6px;left: 6px;width: 45%;padding-right: 10px;white-space: nowrap;content: attr(data-label); font-weight: bold;}
+    /*table row seperation line*/
+    table td:last-of-type:after{content: " "; height: 2px; background:#cbc7c7;width: 100%;position: absolute;top:98%;left: 0;}
+}

@@ -1,8 +1,9 @@
 <style>
     body{[[++cc_body_font]] line-height: 1.5rem; background-color:#[[++cc_body_bg_color]];color:#[[++cc_body_font_color]];}
     h1,h2,h3,strong,.bold{[[++cc_heading_font]]} .light{[[++cc_light_font]]}
+    body a{color:#[[++cc_primary_color]];text-decoration:none;}
 
-        /*mobile nav*/
+    /*mobile nav*/
     body:after {background: #[[++cc_mobile_background]];content: '';height: 100%;left: 0;opacity: 0;overflow: hidden;padding: 0;position: absolute;z-index: 999;top: 0;visibility: hidden;transition: all 0.4s ease;width: 100%;}
     .b-nav li a{color: #[[++cc_mobile_link]];} .b-link{color: #[[++cc_mobile_link]];border-left:2px solid #[[++cc_mobile_link]];}.b-link:hover {color: #[[++cc_mobile_link_hover]];}
     .b-link--active {border-left: 2px solid #[[++cc_mobile_link]];padding-left: 10px;}
@@ -38,9 +39,19 @@
         /*page*/
     body.page main{background-color:#FFF;}
     body.page main > section > article > h1{border-bottom: 1px solid #[[++cc_primary_color]];}
-    body.page .page--meta{color:#aaa;[[++cc_light_font]]}
+    body.page .page--meta{color:#[[++cc_third_color]];[[++cc_light_font]]}
     body.page main a{color:#[[++cc_primary_color]];text-decoration:none;}
+
+    blockquote{color:#[[++cc_third_color]];border-left:3px solid #[[++cc_primary_color]]; padding: .5rem 1rem; margin:1rem 0;}
 
         /*featured post*/
     .feat--post h4 a{color:#[[++cc_secondary_color]];}.feat--post h4 a:hover{color:#[[++cc_primary_color]];}
+
+    /*forms*/
+    input,textarea,select{border:1px solid #[[++cc_third_color]] !important;}
+    form button[type="submit"]{background-color:#[[++cc_primary_color]];} form button[type="submit"]:hover{color: #FFF;}
+
+    /*tables*/
+    table{border-bottom:1px solid #[[++cc_third_color]];}
+    table thead{border-bottom:1px solid #[[++cc_primary_color]];}
 </style>
