@@ -348,7 +348,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
                 'xtype' => 'modx-panel-tv-image',
                 'description' => '',
                 'is_required' => '0',
-                'sortorder' => '1',
+                'sortorder' => '3',
                 'value' => "assets/components/flatso/images/wayne-avatar.jpg",
                 'default' => '',
                 'group' => $groups['content'],
