@@ -20,8 +20,10 @@ if (!function_exists('getResourceMap')) {
     }
 }
 
-switch ($options[xPDOTransport::PACKAGE_ACTION]) {
-    case xPDOTransport::ACTION_INSTALL:
+if (!function_exists('createClientConfigSettings')) {
+    function createClientConfigSettings($rssResource) {
+        global $modx;
+
         $clientConfigCorePath = $modx->getOption('clientconfig.core_path', null, $modx->getOption('core_path', null, MODX_CORE_PATH) . 'components/clientconfig/');
         /** @var ClientConfig $clientConfig */
         $clientConfig = $modx->getService(
@@ -32,16 +34,8 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
                 'core_path' => $clientConfigCorePath
             )
         );
-
+        
         $groups = array();
-        if (isset($options['install_resources']) && empty($options['install_resources'])) {
-            $rssResource = '';
-            $archivistIDsValue = '';
-        } else {
-            $resourceMap = getResourceMap();
-            $rssResource = "[[~" . $resourceMap['RSS'] . "]]";
-            $archivistIDsValue = $resourceMap['Archives'];
-        }
 
         $group = $modx->getObject('cgGroup', array('label' => 'Global'));
         if (!$group) {
@@ -478,19 +472,38 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         );
 
         foreach ($settings as $setting) {
-            $settingObject = $modx->newObject('cgSetting');
-            $settingObject->set('key', $setting['key']);
-            $settingObject->set('label', $setting['label']);
-            $settingObject->set('xtype', $setting['xtype']);
-            $settingObject->set('description', $setting['description']);
-            $settingObject->set('is_required', $setting['is_required']);
-            $settingObject->set('sortorder', $setting['sortorder']);
-            $settingObject->set('value', $setting['value']);
-            $settingObject->set('default', $setting['default']);
-            $settingObject->set('group', $setting['group']);
-            $settingObject->set('options', $setting['options']);
-            $settingObject->save();
+            $settingObject = $modx->getObject('cgSetting', array('key' => $setting['key']));
+            if (!$settingObject) {
+                $settingObject = $modx->newObject('cgSetting');
+                $settingObject->set('key', $setting['key']);
+                $settingObject->set('label', $setting['label']);
+                $settingObject->set('xtype', $setting['xtype']);
+                $settingObject->set('description', $setting['description']);
+                $settingObject->set('is_required', $setting['is_required']);
+                $settingObject->set('sortorder', $setting['sortorder']);
+                $settingObject->set('value', $setting['value']);
+                $settingObject->set('default', $setting['default']);
+                $settingObject->set('group', $setting['group']);
+                $settingObject->set('options', $setting['options']);
+                $settingObject->save();
+            }
         }
+    }
+}
+
+switch ($options[xPDOTransport::PACKAGE_ACTION]) {
+    case xPDOTransport::ACTION_INSTALL:
+
+        if (isset($options['install_resources']) && empty($options['install_resources'])) {
+            $rssResource = '';
+            $archivistIDsValue = '';
+        } else {
+            $resourceMap = getResourceMap();
+            $rssResource = "[[~" . $resourceMap['RSS'] . "]]";
+            $archivistIDsValue = $resourceMap['Archives'];
+        }
+
+        createClientConfigSettings($rssResource);
 
         $themeSetting = $modx->getObject('modSystemSetting', array('key' => 'mxt.theme'));
         if ($themeSetting) {
@@ -522,6 +535,16 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
 
         break;
     case xPDOTransport::ACTION_UPGRADE:
+        
+        $resourceMap = getResourceMap();
+        $rssResource = '';
+        
+        if (!empty($resourceMap)) {
+            $rssResource = "[[~" . $resourceMap['RSS'] . "]]";
+        }
+
+        createClientConfigSettings($rssResource);
+        
         break;
     case xPDOTransport::ACTION_UNINSTALL:
         break;
