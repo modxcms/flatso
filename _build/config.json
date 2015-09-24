@@ -3,7 +3,7 @@
   "lowCaseName": "flatso",
   "description": "Home of Flatso: the simple blog and theme for MODX, done right.",
   "author": "Wayne Roddy",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "package": {
     "elements": {
       "templates": [
@@ -699,6 +699,10 @@
       },
       {
         "key": "category_id",
+        "value": ""
+      },
+      {
+        "key": "rss_id",
         "value": ""
       },
       {

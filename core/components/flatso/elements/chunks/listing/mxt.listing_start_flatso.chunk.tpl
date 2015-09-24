@@ -5,7 +5,7 @@
     <!-- You have Selected Content Template [[*content_tpl]] -->
     <title>[[*longtitle:default=`[[*pagetitle]]`]] | [[++cc_site_title]]</title>
     <base href="[[!++site_url]]" />
-    <link rel="alternate" type="application/rss+xml" title="[[++site_name]]" href="[[!++site_url]][[~12]]" />
+    <link rel="alternate" type="application/rss+xml" title="[[++site_name]]" href="[[!++site_url]][[++flatso.rss_id]]" />
     [[$mxt.global_meta_flatso]]
     [[$mxt.global_assets_flatso]]
 
