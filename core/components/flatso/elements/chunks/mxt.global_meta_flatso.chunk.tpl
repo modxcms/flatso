@@ -6,6 +6,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="[[*longtitle:default=`[[*pagetitle]]`]]">
 <meta property="og:description" content="[[*description]]">
+[[*page_img:notempty=`<meta property="og:image" content="[[!++site_url]][[*page_img]]" />`]]
 [[switch?
 &get=`[[*id]]`
 &c1=`[[++flatso.category_id]]` &do1=``
@@ -15,4 +16,3 @@
 <link rel="canonical" href="[[!++site_url]][[*id:is=`1`:then=``:else=`[[*uri]]`]]">
 `
 ]]
-
